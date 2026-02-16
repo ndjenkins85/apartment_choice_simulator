@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Choice Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Apartment Choice Simulator</h1>
+            <p class="tagline">Smart apartment comparison using conjoint analysis</p>
+        </header>
+
+        <div class="info-panel">
+            <h3>How it works</h3>
+            <p>This tool uses a trained linear regression model to predict apartment value based on 9 key features. 
+            Add apartments, adjust their attributes, and see how they compare. The model predicts a "willingness to pay" 
+            score based on weighted feature importance.</p>
+        </div>
+
+        <div class="controls">
+            <button id="addApartment" class="btn btn-primary">+ Add Apartment</button>
+            <button id="loadExamples" class="btn btn-secondary">Load Example Data</button>
+            <button id="clearAll" class="btn btn-danger">Clear All</button>
+        </div>
+
+        <div id="apartments" class="apartments-grid"></div>
+
+        <div class="visualizations">
+            <div class="chart-container">
+                <h3>Score Comparison</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Feature Profile</h3>
+                <canvas id="radarChart"></canvas>
+            </div>
+        </div>
+
+        <div class="ranking">
+            <h3>🏆 Rankings</h3>
+            <div id="rankingTable"></div>
+        </div>
+
+        <footer>
+            <p>Built by Nick Jenkins | <a href="https://github.com/ndjenkins85/apartment_choice_simulator" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
